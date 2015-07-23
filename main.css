@@ -1,18 +1,18 @@
 td {
 	border: 5px solid black;
-	width: 50px;
-	height: 50px;
+	width: 150px;
+	height: 150px;
+	background-image: url('http://cdn2.movietvtechgeeks.com/wp-content/uploads/2015/06/donald-trump-fired-by-nbc-2015-gossip-small-150x150.jpg');
+	z-index: -1;
 }
 
 .blue {
+	background-image: none;
 	background-color: blue;
-}
+}	
 
 .red {
+	background-image: none;
 	background-color: red;
 }
 
-table (
-	float: left;
-	width:
-	)
