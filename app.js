@@ -1,34 +1,37 @@
 // REMEMBER TO LOAD JQUERY AND JS FILES IN HTML
 
+// Click function to toggle class of  TD cell 'blue' (on and off)
 
-// RADIO buttons:
-
-//<input type="radio" class="checked" name="red">Red
-//<input type="radio" name="blue">Blue
-///
-// Switching between red and blue user:
-// Click function for selecting red or blue user
-
-$("input[type='radio']").click(function () {
-	$(this).prop('checked');
-	$(this).addClass('checked');
-	$(this).siblings().removeProp('checked'); // .sibling or .siblings??
-	$(this).siblings().removeClass('checked');
+//When red is clicked
+$('#red').click(function (event) {
+    //prevent default action and set a border to highlight whose turn it is.
+    event.preventDefault();
+    $(this).css("border", "5px solid red");
+    $('#blue').css("border", "none");
+    $(this).addClass("players-turn");
+    $('#blue').removeClass("players-turn");
 });
 
-// Click function to toggle class of  TD cell 'blue' (on and off)
-	
-	$('td').click(function () {
-		if ($('[name="blue"]').hasClass('checked')) {
-			$(this).toggleClass('blue');
-		}
-		if ($('[name="red"]').hasClass('checked')) {
-			$(this).toggleClass('red');
-		}
-	});
+$('#blue').click(function (event) {
+    //prevent default action and set a border to highlight whose turn it is.
+    event.preventDefault();
+    $(this).css("border", "5px solid blue")
+    $('#red').css("border", "none");
+    $(this).addClass("players-turn");
+    $('#red').removeClass("players-turn");
+});
 
-
-
+    //When a cell is clicked
+    $('td').click(function () {
+        if ($('#red').hasClass("players-turn")) {
+        //Change class of cell to red
+            $(this).toggleClass('red'); 
+        }
+        if ($('#blue').hasClass("players-turn")) {
+        //Change class of cell to red
+            $(this).toggleClass('blue'); 
+        }
+        });
 
 // SET UP WINNERS: Ask if three in a row for each scenario.
 
@@ -44,4 +47,8 @@ $('td').click(function () {
 		}
 	}
 });
+
+$('#refresh').click(function() {window.location.reload()});
+
+
 
