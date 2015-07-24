@@ -12,7 +12,7 @@
 $("input[type='radio']").click(function () {
 	$(this).prop('checked');
 	$(this).addClass('checked');
-	$(this).siblings().removeProp('checked') // .sibling or .siblings??
+	$(this).siblings().removeProp('checked'); // .sibling or .siblings??
 	$(this).siblings().removeClass('checked');
 });
 
@@ -21,70 +21,27 @@ $("input[type='radio']").click(function () {
 	$('td').click(function () {
 		if ($('[name="blue"]').hasClass('checked')) {
 			$(this).toggleClass('blue');
-		} else if ($('[name="red"]').hasClass('checked')) {
+		}
+		if ($('[name="red"]').hasClass('checked')) {
 			$(this).toggleClass('red');
 		}
 	});
 
+
+
+
 // SET UP WINNERS: Ask if three in a row for each scenario.
 
+var winningClasses = [".row1", ".row2", ".row3", ".column1", ".column2", ".column3", ".diag1", ".diag2"];
+
 $('td').click(function () {
-	if (($('.row1.blue').length) === 3) {
-		alert("Blue Won!");
-	}
-	if (($('.row2.blue').length) === 3) {
-		alert("Blue Won!");
-	}
-	if (($('.row3.blue').length) === 3) {
-		alert("Blue Won!");
-	}
-	if (($('.column1.blue').length) === 3) {
-		alert("Blue Won!");
-	}
-	if (($('.column2.blue').length) === 3) {
-		alert("Blue Won!");
-	}
-	if (($('.column3.blue').length) === 3) {
-		alert("Blue Won!");
-	}
-	if (($('.diag1.blue').length) === 3) {
-		alert("Blue Won!");
-	}
-	if (($('.diag2.blue').length) === 3) {
-		alert("Blue Won!");
+	for (i=0; i < winningClasses.length; i++) {
+		if (($(winningClasses[i] + ".blue").length === 3)) {
+			alert("Hill Dawg Won!")
+		}
+		if (($(winningClasses[i] + ".red").length === 3)) {
+			alert("You're Fired!")
+		}
 	}
 });
 
-
-$('td').click(function () {
-   if (($('.row1.red').length) === 3) {
-       alert("Red Won!");
-   }
-   if (($('.row2.red').length) === 3) {
-       alert("Red Won!");
-   }
-
-   if (($('.row3.red').length) === 3) {
-       alert("Red Won!");
-   }
-
-   if (($('.column1.red').length) === 3) {
-       alert("Red Won!");
-   }
-
-   if (($('.column2.red').length) === 3) {
-       alert("Red Won!");
-   }
-
-   if (($('.column3.red').length) === 3) {
-       alert("Red Won!");
-   }
-
-   if (($('.diag1.red').length) === 3) {
-       alert("Red Won!");
-   }
-
-   if (($('.diag2.red').length) === 3) {
-       alert("Red Won!");
-   }
-});
