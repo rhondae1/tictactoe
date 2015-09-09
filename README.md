@@ -7,11 +7,11 @@ This is a simple game of tic tac toe themed on the 2016 presidential election. I
 
 #Installation
 
-To view the game, run:
+- git clone https://github.com/tombler/tictactoe.git
+- cd tictactoe
+- Serve from your project directory using your local host.
 
--git clone https://github.com/tombler/tictactoe.git
--cd tictactoe
--Serve from your project directory using your local host.
+
 
 #Contact
 
